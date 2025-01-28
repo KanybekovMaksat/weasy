@@ -31,7 +31,7 @@ export function DashboardPage() {
 
   return (
     <div className="my-10 flex justify-center items-center flex-col gap-6">
-      <div className="slider-banner w-full max-w-7xl px-4">
+      {/* <div className="slider-banner w-full max-w-7xl px-4">
         <Swiper
           modules={[Pagination, EffectFade, Autoplay]}
           pagination={{ clickable: true }}
@@ -60,7 +60,7 @@ export function DashboardPage() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
     </div>
   );
 }

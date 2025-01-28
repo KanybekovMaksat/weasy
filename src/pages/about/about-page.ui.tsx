@@ -1,5 +1,5 @@
-import { Typography } from '@mui/material';
-import { Title } from '~shared/ui/title';
+import { Typography } from "@mui/material";
+import { Title } from "~shared/ui/title";
 
 export function AboutPage() {
   return (
@@ -35,7 +35,7 @@ export function AboutPage() {
           variant="body2"
           className="text-gray-400 text-center mt-4 italic text-lg flex flex-col items-center justify-center gap-3"
         >
-          Разработку платформы осуществляют программисты из команды:{' '}
+          Разработку платформы осуществляют программисты из команды:{" "}
           <span className="p-2 not-italic border border-alto text-[#156dd1] font-bold flex items-center gap-3 rounded">
             OurEra Soft
             <img

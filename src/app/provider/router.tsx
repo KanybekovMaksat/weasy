@@ -2,17 +2,17 @@ import {
   RouterProvider,
   createBrowserRouter,
   useRouteError,
-} from 'react-router-dom';
-import { dashboardPageRoute } from '../../pages/dashboard';
-import { GenericLayout } from '../../pages/layout';
-import { aboutPageRoute } from '~pages/about';
-
+} from "react-router-dom";
+import { dashboardPageRoute } from "../../pages/dashboard";
+import { GenericLayout } from "../../pages/layout";
+import { aboutPageRoute } from "~pages/about";
+import { HomePageRoute } from "~pages/home";
 function BubbleError() {
   const error = useRouteError();
   if (error instanceof Error) {
-    console.error('Route Error:', error.message);
+    console.error("Route Error:", error.message);
   } else {
-    console.error('Unknown Route Error:', error);
+    console.error("Unknown Route Error:", error);
   }
   return (
     <div className="text-center text-red-500">
@@ -22,16 +22,12 @@ function BubbleError() {
   );
 }
 
-
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <GenericLayout />,
     errorElement: <BubbleError />,
-    children: [
-      dashboardPageRoute,
-      aboutPageRoute,
-    ],
+    children: [dashboardPageRoute, aboutPageRoute],
   },
 ]);
 

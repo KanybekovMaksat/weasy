@@ -8,27 +8,27 @@ import {
   registerUserMutation,
   resetPasswordConfirm,
   resetPasswordEmail,
-} from './user.api';
+} from "./user.api";
 import {
   useMutation,
   useQuery,
   queryOptions as tsqQueryOptions,
   useQueryClient,
-} from '@tanstack/react-query';
-import { pathKeys } from '~shared/lib/react-router';
-import { useNavigate } from 'react-router-dom';
-import { setCookie } from 'typescript-cookie';
-import { toast } from 'react-toastify';
-import { queryClient } from '~shared/lib/react-query/react-query.lib';
-import { UserDtoSchema } from './user.types';
+} from "@tanstack/react-query";
+import { pathKeys } from "~shared/lib/react-router";
+import { useNavigate } from "react-router-dom";
+import { setCookie } from "typescript-cookie";
+import { toast } from "react-toastify";
+import { queryClient } from "~shared/lib/react-query/react-query.lib";
+import { UserDtoSchema } from "./user.types";
 
 const keys = {
-  root: () => ['user'],
-  getToken: () => [...keys.root(), 'getToken'] as const,
-  loginUser: () => [...keys.root(), 'loginUser'] as const,
-  chart:() => [...keys.root(), "chart"] as const,
-  registerUser: () => [...keys.root(), 'registerUser'] as const,
-  user: (username: string) => [...keys.root(), 'username', username] as const,
+  root: () => ["user"],
+  getToken: () => [...keys.root(), "getToken"] as const,
+  loginUser: () => [...keys.root(), "loginUser"] as const,
+  chart: () => [...keys.root(), "chart"] as const,
+  registerUser: () => [...keys.root(), "registerUser"] as const,
+  user: (username: string) => [...keys.root(), "username", username] as const,
 };
 
 export const userService = {
@@ -85,17 +85,17 @@ export function useGetTokenMutation() {
     mutationKey: keys.getToken(),
     mutationFn: getTokenMutation,
     onSuccess: async (response) => {
-      setCookie('access', response.data.access);
-      localStorage.setItem('refresh', response.data.refresh);
-      localStorage.removeItem('username');
-      localStorage.removeItem('password');
-      toast.success('Вы успешно авторизовались!', { autoClose: 500 });
+      setCookie("access", response.data.access);
+      localStorage.setItem("refresh", response.data.refresh);
+      localStorage.removeItem("username");
+      localStorage.removeItem("password");
+      toast.success("Вы успешно авторизовались!", { autoClose: 500 });
       navigate(pathKeys.profile.root());
     },
     onError: (error: AxiosErrorType) => {
       const errorMessage = error.response
         ? error.response.data.detail
-        : 'Ошибка при выполнении запроса';
+        : "Ошибка при выполнении запроса";
       toast.error(errorMessage);
     },
   });
@@ -107,7 +107,7 @@ export function useRegisterMutation() {
     mutationFn: registerUserMutation,
     onSuccess: async () => {
       await toast.success(
-        'На вашу почту отправлено письмо для подтверждения вашей почты.'
+        "На вашу почту отправлено письмо для подтверждения вашей почты."
       );
     },
     onError: (error: AxiosErrorType) => {
@@ -117,7 +117,7 @@ export function useRegisterMutation() {
           toast.error(`${field}: ${errors[field][0]}`);
         });
       } else {
-        toast.error('Ошибка при выполнении запроса');
+        toast.error("Ошибка при выполнении запроса");
       }
     },
   });
@@ -129,7 +129,7 @@ export function useEditUserProfile() {
     mutationKey: keys.root(),
     mutationFn: editUserProfile,
     onSuccess: async () => {
-      await toast.success('Ваш профиль успешно изменен!');
+      await toast.success("Ваш профиль успешно изменен!");
       await queryClient.invalidateQueries({ queryKey: keys.root() });
     },
     onError: (error: AxiosErrorType) => {
@@ -139,7 +139,7 @@ export function useEditUserProfile() {
           toast.error(`${field}: ${errors[field][0]}`);
         });
       } else {
-        toast.error('Ошибка при выполнении запроса');
+        toast.error("Ошибка при выполнении запроса");
       }
     },
   });
@@ -150,7 +150,7 @@ export function useActivationMutation() {
     mutationKey: keys.registerUser(),
     mutationFn: emailActivationMutation,
     onSuccess: async () => {
-      await toast.success('Success');
+      await toast.success("Success");
     },
     onError: (error: AxiosErrorType) => {
       if (error.response && error.response.data) {
@@ -159,7 +159,7 @@ export function useActivationMutation() {
           toast.error(`${field}: ${errors[field][0]}`);
         });
       } else {
-        toast.error('Ошибка при выполнении запроса');
+        toast.error("Ошибка при выполнении запроса");
       }
     },
   });
@@ -170,7 +170,9 @@ export function useResetPaswordSendEmail() {
     mutationKey: keys.root(),
     mutationFn: resetPasswordEmail,
     onSuccess: async () => {
-      await toast.success('На вашу почту отправлено сообщение для сброса пароля');
+      await toast.success(
+        "На вашу почту отправлено сообщение для сброса пароля"
+      );
     },
     onError: (error: AxiosErrorType) => {
       if (error.response && error.response.data) {
@@ -179,7 +181,7 @@ export function useResetPaswordSendEmail() {
           toast.error(`${field}: ${errors[field][0]}`);
         });
       } else {
-        toast.error('Ошибка при выполнении запроса');
+        toast.error("Ошибка при выполнении запроса");
       }
     },
   });
@@ -190,7 +192,7 @@ export function useResetPasword() {
     mutationKey: keys.root(),
     mutationFn: resetPasswordConfirm,
     onSuccess: async () => {
-      await toast.success('Пароль успешно изменен!');
+      await toast.success("Пароль успешно изменен!");
     },
     onError: (error: AxiosErrorType) => {
       if (error.response && error.response.data) {
@@ -199,7 +201,7 @@ export function useResetPasword() {
           toast.error(`${field}: ${errors[field][0]}`);
         });
       } else {
-        toast.error('Ошибка при выполнении запроса');
+        toast.error("Ошибка при выполнении запроса");
       }
     },
   });
@@ -211,8 +213,6 @@ export function useGetUserByUsername(username: string) {
     queryFn: () => getUserByUsername(username),
   });
 }
-
-
 
 export function useGetUserPerfomanceChart() {
   return useQuery({

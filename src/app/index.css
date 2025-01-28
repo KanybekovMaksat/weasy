@@ -2,6 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'swiper/swiper-bundle.min.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .slider-banner .swiper-pagination-bullet {
   width: 15px;
@@ -13,11 +24,18 @@
   transition: opacity 0.5s, background-color 0.5s, width 0.5s;
   transition-delay: 0.5s, 0.5s, 0s;
 }
+
 .swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
 }
+
 .slider-banner .swiper-pagination-bullet-active {
   background: #767ec4;
   width: 45px;
   transition-delay: 0s;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
 }

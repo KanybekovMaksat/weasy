@@ -22,13 +22,22 @@ export function Footer() {
           <Link to="/about" className="text-gray-300 hover:text-white text-sm">
             О платформе
           </Link>
-          <Link to="/catalog" className="text-gray-300 hover:text-white text-sm">
+          <Link
+            to="/catalog"
+            className="text-gray-300 hover:text-white text-sm"
+          >
             Каталог
           </Link>
-          <Link to="/loyalty" className="text-gray-300 hover:text-white text-sm">
+          <Link
+            to="/loyalty"
+            className="text-gray-300 hover:text-white text-sm"
+          >
             Программа лояльности
           </Link>
-          <Link to="/contact" className="text-gray-300 hover:text-white text-sm">
+          <Link
+            to="/contact"
+            className="text-gray-300 hover:text-white text-sm"
+          >
             Контакты
           </Link>
         </div>
