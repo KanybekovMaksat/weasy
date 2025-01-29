@@ -1,7 +1,7 @@
 import { Box, Typography, Button } from "@mui/material";
 import { useState } from "react";
-import slider from "../../../public/Slider/slider.png";
-import phoneslider from "../../../public/Slider/phoneslider.jpg";
+import slider from "~shared/assets/Slider/slider.png";
+import phoneslider from "~shared/assets/Slider/phoneslider.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
@@ -28,7 +28,7 @@ export const HeroSection: React.FC = () => {
       : "text-[18px] normal-case rounded-[10px] border-btnback border-none text-black w-[209px]";
 
   return (
-    <Box className='pb-[90px]'>
+    <Box className="pb-[90px]">
       <div className="container">
         <Box className="flex items-center gap-[70px]">
           <div>

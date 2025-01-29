@@ -6,14 +6,13 @@ import {
   Box,
   Button,
 } from "@mui/material";
+
 import { Link, useNavigate } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import SearchIcon from "@mui/icons-material/Search";
-import LoginIcon from "@mui/icons-material/Login";
-import MenuIcon from "@mui/icons-material/Menu";
+
 import { pathKeys } from "~shared/lib/react-router";
 
-export function Header() {
+export const Header: React.FC = () => {
   const navigate = useNavigate();
   return (
     <AppBar
@@ -73,4 +72,4 @@ export function Header() {
       </div>
     </AppBar>
   );
-}
+};

@@ -1,89 +1,54 @@
 import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
+
+import { pathKeys } from "~shared/lib/react-router";
 
 export function Footer() {
   return (
-    <Box component="footer" className="bg-violet text-white py-8 px-6 md:px-20">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
-        <Link to="/" className="flex items-center mb-6 lg:mb-0">
-          <Typography
-            variant="h6"
-            component="div"
-            className="font-bold text-lg text-center lg:text-left"
-          >
-            Weasy
-          </Typography>
-        </Link>
+    <Box
+      component="footer"
+      className="bg-[#F9F9FA] text-black py-8 px-6 md:px-20"
+    >
+      <div className="container ">
+        <div className="mx-auto flex flex-col lg:flex-row gap-x-[120px] items-center ">
+          <Link to="/" className="flex items-center mb-6 lg:mb-0">
+            <div className="gap-2 flex items-center">
+              <Box className="w-[60px] h-[60px] bg-black"></Box>
+              <Typography className="font-semibold text-2xl text-black">
+                Weasy
+              </Typography>
+            </div>
+          </Link>
 
-        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
-          <Link to="/about" className="text-gray-300 hover:text-white text-sm">
-            О платформе
-          </Link>
-          <Link
-            to="/catalog"
-            className="text-gray-300 hover:text-white text-sm"
-          >
-            Каталог
-          </Link>
-          <Link
-            to="/loyalty"
-            className="text-gray-300 hover:text-white text-sm"
-          >
-            Программа лояльности
-          </Link>
-          <Link
-            to="/contact"
-            className="text-gray-300 hover:text-white text-sm"
-          >
-            Контакты
-          </Link>
-        </div>
-
-        <div className="flex space-x-4 mt-6 lg:mt-0">
-          <a
-            href="https://t.me/yourTelegramLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white"
-          >
-            <TelegramIcon />
-          </a>
-          <a
-            href="https://instagram.com/yourInstagramLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white"
-          >
-            <InstagramIcon />
-          </a>
-          <a
-            href="https://facebook.com/yourFacebookLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white"
-          >
-            <FacebookIcon />
-          </a>
+          <div className="hidden md:flex items-center gap-6">
+            <Link
+              to={pathKeys.program()}
+              className="text-black hover:text-btnback font-medium text-[18px]"
+            >
+              О программе
+            </Link>
+            <Link
+              to={pathKeys.advantages()}
+              className="text-black hover:text-btnback font-medium text-[18px]"
+            >
+              Преимущества
+            </Link>
+            <Link
+              to={pathKeys.subscriptions()}
+              className="text-black hover:text-btnback font-medium text-[18px]"
+            >
+              Подписки
+            </Link>
+            <Link
+              to={pathKeys.reviews()}
+              className="text-black hover:text-btnback font-medium text-[18px]"
+            >
+              Отзывы
+            </Link>
+          </div>
         </div>
       </div>
-
-      <div className="mt-8 border-t border-gray-600 pt-4">
-        <Typography
-          variant="body2"
-          className="text-gray-400 text-center text-sm"
-        >
-          &copy; {new Date().getFullYear()} Weasy. Все права защищены.
-        </Typography>
-        <Typography
-          variant="body2"
-          className="text-gray-400 text-center text-sm mt-2"
-        >
-          Developed by OurEra Soft
-        </Typography>
-      </div>
+      <div className="mt-8 border-t border-[#ADADAD] pt-4"></div>
     </Box>
   );
 }
