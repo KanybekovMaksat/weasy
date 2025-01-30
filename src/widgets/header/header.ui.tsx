@@ -9,7 +9,6 @@ import {
 
 import { Link, useNavigate } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
 import { pathKeys } from "~shared/lib/react-router";
 
 export const Header: React.FC = () => {

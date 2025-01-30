@@ -4,6 +4,9 @@ import { Header } from "~widgets/header";
 import { HeroSection } from "~widgets/herosection";
 import { CardList } from "~widgets/cardinfo";
 import { PricingWidget } from "~widgets/cardprice";
+import { ReviewWidget } from "~widgets/cardreview";
+import { ConsultationBlock } from "~entities/сonsultationblock";
+import { AccordionWidget } from "~widgets/accordion";
 export function GenericLayout() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -13,6 +16,10 @@ export function GenericLayout() {
         <HeroSection />
         <CardList />
         <PricingWidget />
+        <ReviewWidget />
+        <AccordionWidget />
+
+        <ConsultationBlock />
       </main>
       <Footer />
     </div>

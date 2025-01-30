@@ -5,11 +5,11 @@ import helpicon from "../../../public/CardInfoIcon/helpicon.svg";
 import dateicon from "../../../public/CardInfoIcon/dateicon.svg";
 import { Box, CardMedia, Typography, CardContent, Card } from "@mui/material";
 
-export type CardItemProps = {
+export interface CardItemProps {
   icon: string;
   title: React.ReactNode;
   description: string;
-};
+}
 
 export const CardInfo: React.FC<CardItemProps> = ({
   icon,

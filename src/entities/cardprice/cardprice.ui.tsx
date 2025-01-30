@@ -1,7 +1,7 @@
 import { Card, CardContent, Typography, Button } from "@mui/material";
 import React from "react";
 
-export type PriceCardProps = {
+export interface PriceCardProps  {
   title: string;
   price: string;
   description: string;

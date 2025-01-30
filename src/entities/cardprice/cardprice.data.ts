@@ -1,5 +1,5 @@
 import { PriceCardProps } from "./cardprice.ui";
-
+    
 export const PricingData: PriceCardProps[] = [
   {
     title: "Бесплатно",
