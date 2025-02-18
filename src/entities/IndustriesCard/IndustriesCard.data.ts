@@ -15,36 +15,42 @@ export const industries: Industry[] = [
     title: "Красота",
     description: "Для салонов, парикмахеров и косметологических услуг.",
     icon: flower,
+    slug: "beauty",
   },
   {
     id: 2,
     title: "Медицина",
     description: "Для медицинских центров, клиник и врачебных кабинетов.",
     icon: help,
+    slug: "medicine",
   },
   {
     id: 3,
     title: "Спорт",
     description: "Для тренажерных залов, йога-студий и фитнес-центров.",
     icon: sport,
+    slug: "sport",
   },
   {
     id: 4,
     title: "Сервис",
     description: "Для уборки, ремонтных мастерских и юридических услуг.",
     icon: service,
+    slug: "service",
   },
   {
     id: 5,
     title: "Развлечение",
     description: "Для VR клубов, квест-комнат и других мероприятий.",
     icon: gaming,
+    slug: "entertainment",
   },
   {
     id: 6,
     title: "Обучение",
     description: "Для репетиторов, школ и детских классов.",
     icon: study,
+    slug: "education",
   },
   {
     id: 7,
@@ -52,6 +58,7 @@ export const industries: Industry[] = [
     description:
       "Для ветеринарных клиник, салонов по уходу и услуг для домашних животных.",
     icon: animal,
+    slug: "animals",
   },
   {
     id: 8,
@@ -59,11 +66,13 @@ export const industries: Industry[] = [
     description:
       "Для фотостудий, коворкинг-пространств и мест проведения мероприятий.",
     icon: rental,
+    slug: "rental",
   },
   {
     id: 9,
     title: "Авто",
     description: "Для автосервисов, выставочных залов и моек.",
     icon: car,
+    slug: "auto",
   },
 ];

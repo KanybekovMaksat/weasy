@@ -3,4 +3,5 @@ export type Industry = {
     title: string;
     description: string;
     icon: string;
+    slug: string;
   };
