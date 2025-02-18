@@ -30,6 +30,9 @@ export const pathKeys = {
   advantages() {
     return pathKeys.root.concat("advantages/");
   },
+  industries() {
+    return pathKeys.root.concat("industries/");
+  },
   // group({ params }: { params: { slug: string } }) {
   //   return pathKeys.root.concat(`group/${params.slug}/`);
   // },

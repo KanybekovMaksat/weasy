@@ -6,7 +6,7 @@ import {
 import { HomePageRoute } from "../../pages/HomePage";
 import { GenericLayout } from "../../pages/layout";
 import { aboutPageRoute } from "~pages/about";
-
+import { IndustriesPageRoute } from "~pages/industriesPage";
 function BubbleError() {
   const error = useRouteError();
   if (error instanceof Error) {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <GenericLayout />,
     errorElement: <BubbleError />,
-    children: [HomePageRoute, aboutPageRoute],
+    children: [HomePageRoute, aboutPageRoute, IndustriesPageRoute],
   },
 ]);
 

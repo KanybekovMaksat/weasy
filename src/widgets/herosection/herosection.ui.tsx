@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
       : "text-[18px] normal-case rounded-[10px] border-btnback border-none text-black w-[209px]";
 
   return (
-    <Box className="pb-[90px]">
+    <Box className="pb-[90px] pt-[100px]">
       <div className="container">
         <Box className="flex items-center gap-[70px]">
           <Reveal from="left" delay={0.3}>
