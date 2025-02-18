@@ -7,7 +7,6 @@ export const AccordionWidget: React.FC = () => {
     <Box>
       <div className="container">
         <Reveal from="bottom" delay={0.3}>
-          {" "}
           <Box className="text-center ">
             <Typography
               variant="h3"

@@ -22,12 +22,12 @@ export default {
       violet: "#8f95cd",
       milk: "#fe98c8",
       btnback: "#303030",
-      mainback:'#f3f3f3',
+      mainback: "#f3f3f3",
     },
     extend: {
       spacing: {
-        '15px' : '15px',
-      }
+        "15px": "15px",
+      },
     },
   },
   plugins: [],

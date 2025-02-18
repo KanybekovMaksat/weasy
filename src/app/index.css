@@ -38,4 +38,8 @@ body {
 .container {
   max-width: 1240px;
   margin: 0 auto;
+
+
+
+  @apply max-md:px-[16px];
 }

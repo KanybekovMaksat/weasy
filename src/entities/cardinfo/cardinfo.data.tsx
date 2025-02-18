@@ -3,7 +3,7 @@ import clockicon from "~shared/assets/CardInfoIcon/clockicon.png";
 import helpicon from "~shared/assets/CardInfoIcon/helpicon.png";
 import dateicon from "~shared/assets/CardInfoIcon/dataicon.png";
 
-export const CardsData:  CardItemProps[] = [
+export const CardsData: CardItemProps[] = [
   {
     icon: clockicon,
     title: (
@@ -12,8 +12,7 @@ export const CardsData:  CardItemProps[] = [
         минут
       </>
     ),
-    description:
-      ` Создайте персонализированный лендинг с удобным модулем записи" 
+    description: ` Создайте персонализированный лендинг с удобным модулем записи" 
       
       "Настройте график работы  и принимайте записи без сложностей.`,
   },

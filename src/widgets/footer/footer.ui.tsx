@@ -18,9 +18,10 @@ export function Footer() {
                 Weasy
               </Typography>
             </div>
+
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className=" items-center gap-6 flex max-sm:grid ">
             <Link
               to={pathKeys.program()}
               className="text-black hover:text-btnback font-medium text-[18px]"
