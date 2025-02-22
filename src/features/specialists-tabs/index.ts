@@ -1,0 +1,1 @@
+export  { SpecialistsTabs } from './specialists-tabs.ui';

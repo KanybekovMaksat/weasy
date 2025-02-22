@@ -38,6 +38,9 @@ export const pathKeys = {
       return pathKeys.industries.root().concat(`${slug}`);
     },
   },
+  specialist() {
+    return pathKeys.root.concat("specialist/");
+  },
   // group({ params }: { params: { slug: string } }) {
   //   return pathKeys.root.concat(`group/${params.slug}/`);
   // },

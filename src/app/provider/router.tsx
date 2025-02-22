@@ -3,11 +3,15 @@ import {
   createBrowserRouter,
   useRouteError,
 } from "react-router-dom";
-import { HomePageRoute } from "../../pages/HomePage";
-import { GenericLayout } from "../../pages/layout";
+import { HomePageRoute } from "~pages/homePage";
+import { GenericLayout } from "~pages/layout";
+import { HomeLayout } from "~pages/homeLayout";
+import { IndustriesLayout } from "~pages/industriesLayout";
 import { aboutPageRoute } from "~pages/about";
 import { IndustriesPageRoute } from "~pages/industriesPage";
 import { IndustriesDetailsPageRoute } from "~pages/industriesDetailPage";
+import { SpecialistPageRoute } from "~pages/specialistHome";
+
 function BubbleError() {
   const error = useRouteError();
   if (error instanceof Error) {
@@ -26,14 +30,21 @@ function BubbleError() {
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <HomeLayout />,
+    errorElement: <BubbleError />,
+    children: [HomePageRoute],
+  },
+  {
+    path: "/",
+    element: <IndustriesLayout />,
+    errorElement: <BubbleError />,
+    children: [aboutPageRoute, IndustriesPageRoute, IndustriesDetailsPageRoute],
+  },
+  {
+    path: "/",
     element: <GenericLayout />,
     errorElement: <BubbleError />,
-    children: [
-      HomePageRoute,
-      aboutPageRoute,
-      IndustriesPageRoute,
-      IndustriesDetailsPageRoute,
-    ],
+    children: [SpecialistPageRoute],
   },
 ]);
 

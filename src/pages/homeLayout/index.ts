@@ -1,1 +1,1 @@
-export { GenericHomeLayout, IntroHomeLayout } from './homelayout.ui';
+export {HomeLayout, IntroHomeLayout } from './homelayout.ui';

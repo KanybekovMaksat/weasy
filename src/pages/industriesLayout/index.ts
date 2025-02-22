@@ -1,0 +1,1 @@
+export{ IndustriesLayout, IntroIndusrtiesLayout } from "./industriesLayout.ui";

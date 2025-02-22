@@ -12,9 +12,13 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { pathKeys } from "~shared/lib/react-router";
+import { useNavigate } from "react-router-dom";
 
-export const Header: React.FC = () => {
+
+export const HomeHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   return (
     <AppBar position="static" className="bg-white shadow-none font-medium ">
@@ -59,6 +63,7 @@ export const Header: React.FC = () => {
             <Button
               variant="text"
               className="text-[18px] text-black font-sans normal-case"
+              onClick={() => navigate(`/industries`)}
             >
               Войти
             </Button>
@@ -68,7 +73,7 @@ export const Header: React.FC = () => {
             >
               Зарегистрироваться
             </Button>
-          </div>
+          </div>  
 
           {/* Бургер-меню для мобильных */}
           <IconButton

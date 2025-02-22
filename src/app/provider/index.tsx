@@ -1,20 +1,24 @@
-import { BrowserRouter } from './router';
+import { BrowserRouter } from "./router";
 import {
   StyledEngineProvider,
   ThemeProvider,
   createTheme,
-} from '@mui/material';
-import { QueryClientProvider as TanStackQueryClientProvider } from '@tanstack/react-query';
-import '../index.css';
-import { queryClient } from '~shared/lib/react-query/react-query.lib';
-import { ToastContainer } from 'react-toastify';
+} from "@mui/material";
+import { QueryClientProvider as TanStackQueryClientProvider } from "@tanstack/react-query";
+import "../index.css";
+import { queryClient } from "~shared/lib/react-query/react-query.lib";
+import { ToastContainer } from "react-toastify";
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: "Montserrat",
   },
 });
-
+export const interTheme = createTheme({
+  typography: {
+    fontFamily: "Inter, sans-serif",
+  },
+});
 function App() {
   return (
     <>

@@ -1,20 +1,17 @@
 import { Outlet } from "react-router-dom";
-import { Footer } from "~widgets/footer";
-import { HomeHeader } from "~widgets/home-header";
-
-export function HomeLayout() {
+import { Header } from "~shared/ui/header";
+export function IndustriesLayout() {
   return (
     <div className="flex flex-col min-h-screen">
-      <HomeHeader />
+      <Header />
       <main className="bg-mainback">
         <Outlet />
       </main>
-      <Footer />
-    </div>  
+    </div>
   );
 }
 
-export function IntroHomeLayout() {
+export function IntroIndusrtiesLayout() {
   return (
     <div className="h-screen flex items-center justify-center">
       <Outlet />

@@ -33,7 +33,7 @@ export const IndustriesCard: React.FC<IndustryCardProps> = ({ industry }) => {
             className="text-black px-[25px] py-[20px] rounded-md   bg-[#F0F3F9]"
             onClick={() => navigate(`/industries/${industry.slug}`)}
             src={arrow}
-            alt=""
+            alt=""  
           />
         </div>
         <Typography
