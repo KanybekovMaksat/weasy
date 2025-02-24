@@ -28,10 +28,6 @@ export const StaffList: React.FC<StaffListProps> = ({
     setSelectedSpecialist(specialist);
   };
 
-  const handleClose = () => {
-    setSelectedSpecialist(null);
-  };
-
   const handleSave = () => {
     if (selectedSpecialist) {
       onEdit(selectedSpecialist);
@@ -117,6 +113,24 @@ export const StaffList: React.FC<StaffListProps> = ({
                   name: e.target.value,
                 })
               }
+              sx={{
+                margin: "10px 0",
+
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#000",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#303030",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#303030",
+                  },
+                },
+                "& .MuiFormLabel-root.Mui-focused": {
+                  color: "#000",
+                },
+              }}
             />
             <TextField
               label="Телефон"
@@ -128,6 +142,24 @@ export const StaffList: React.FC<StaffListProps> = ({
                   phone: e.target.value,
                 })
               }
+              sx={{
+                margin: "10px 0",
+
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#000",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#303030",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#303030",
+                  },
+                },
+                "& .MuiFormLabel-root.Mui-focused": {
+                  color: "#000",
+                },
+              }}
             />
             <TextField
               label="Специальность"
@@ -139,11 +171,38 @@ export const StaffList: React.FC<StaffListProps> = ({
                   specialty: e.target.value,
                 })
               }
+              sx={{
+                margin: "10px 0",
+
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#000",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#303030",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#303030",
+                  },
+                },
+                "& .MuiFormLabel-root.Mui-focused": {
+                  color: "#000",
+                },
+              }}
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => setSelectedSpecialist(null)}>Отмена</Button>
-            <Button onClick={handleSave} variant="contained">
+            <Button
+              onClick={() => setSelectedSpecialist(null)}
+              sx={{ color: "#303030" }}
+            >
+              Отмена
+            </Button>
+            <Button
+              onClick={handleSave}
+              variant="contained"
+              sx={{ background: "#303030" }}
+            >
               Сохранить
             </Button>
           </DialogActions>

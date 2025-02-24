@@ -12,8 +12,14 @@ export const pathKeys = {
   policy() {
     return pathKeys.root.concat("privacy-policy/");
   },
+  settings() {
+    return pathKeys.root.concat("settings/");
+  },
   login() {
     return pathKeys.root.concat("auth/");
+  },
+  registration() {
+    return pathKeys.root.concat("registration/");
   },
   program() {
     return pathKeys.root.concat("course/");
@@ -38,9 +44,19 @@ export const pathKeys = {
       return pathKeys.industries.root().concat(`${slug}`);
     },
   },
-  specialist() {
-    return pathKeys.root.concat("specialist/");
+  calendar() {
+    return pathKeys.root.concat("calendar/");
   },
+  specialists() {
+    return pathKeys.root.concat("specialists/");
+  },
+  clients() {
+    return pathKeys.root.concat("clients/");
+  },
+  profile() {
+    return pathKeys.root.concat("profile/");
+  },
+
   // group({ params }: { params: { slug: string } }) {
   //   return pathKeys.root.concat(`group/${params.slug}/`);
   // },

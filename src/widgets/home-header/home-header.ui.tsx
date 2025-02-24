@@ -14,11 +14,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import { pathKeys } from "~shared/lib/react-router";
 import { useNavigate } from "react-router-dom";
 
-
 export const HomeHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-
 
   return (
     <AppBar position="static" className="bg-white shadow-none font-medium ">
@@ -63,19 +61,19 @@ export const HomeHeader: React.FC = () => {
             <Button
               variant="text"
               className="text-[18px] text-black font-sans normal-case"
-              onClick={() => navigate(`/industries`)}
+              onClick={() => navigate(pathKeys.login())}
             >
               Войти
             </Button>
             <Button
               variant="contained"
               className="text-[18px] bg-btnback normal-case rounded-[10px]"
+              onClick={() => navigate(pathKeys.registration())}
             >
               Зарегистрироваться
             </Button>
-          </div>  
+          </div>
 
-          {/* Бургер-меню для мобильных */}
           <IconButton
             className="md:hidden"
             onClick={() => setOpen(true)}

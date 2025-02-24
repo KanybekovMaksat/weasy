@@ -4,7 +4,7 @@ import { industries } from "~entities/IndustriesCard";
 import { Typography, Box } from "@mui/material";
 import { Reveal } from "~shared/lib/framer";
 
-export const IndustrySection = () => {
+export const IndustrySection: React.FC = () => {
   return (
     <>
       <div className="container">

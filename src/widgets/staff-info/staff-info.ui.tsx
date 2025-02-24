@@ -1,12 +1,10 @@
 // widgets/staff-info/ui.tsx
 import { AddStaff } from "~features/add-staff";
 import peopleEdit from "~shared/assets/staffImg/peopleEdit.png";
-import { Typography, Button } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Specialist } from "~entities/staff";
 import { TabKey } from "~entities/tabs";
-import EditIcon from "@mui/icons-material/Edit";
-
-export type Props = {
+type Props = {
   activeTab: TabKey;
   specialists: Specialist[];
   onAdd: (specialist: Specialist) => void;
@@ -17,7 +15,6 @@ export const StaffInfo = ({
   activeTab,
   specialists,
   onAdd,
-  onEditSchedule,
 }: Props) => {
   const renderActionButton = () => {
     switch (activeTab) {
@@ -29,21 +26,6 @@ export const StaffInfo = ({
               specialists.length ? Math.max(...specialists.map((s) => s.id)) : 0
             }
           />
-        );
-
-      case "schedule":
-        return (
-          <Button
-            variant="contained"
-            startIcon={<EditIcon />}
-            onClick={onEditSchedule}
-            sx={{
-              backgroundColor: "#1976d2",
-              "&:hover": { backgroundColor: "#1565c0" },
-            }}
-          >
-            Редактировать график
-          </Button>
         );
 
       default:

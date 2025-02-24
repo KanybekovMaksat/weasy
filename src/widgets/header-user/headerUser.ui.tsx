@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  AppBar,
   Toolbar,
   Typography,
   Box,
@@ -8,10 +7,8 @@ import {
   Popover,
   List,
   ListItem,
-  ListItemText,
   Divider,
   Avatar,
-  IconButton,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import bell from "~shared/assets/header-user/Bell.png";
@@ -19,6 +16,7 @@ import ava from "~shared/assets/header-user/ava.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import EditIcon from "@mui/icons-material/Edit";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import { pathKeys } from "~shared/lib/react-router";
 export const HeaderUser: React.FC = () => {
   const [anchorElNotifications, setAnchorElNotifications] =
     useState<HTMLElement | null>(null);
@@ -41,7 +39,7 @@ export const HeaderUser: React.FC = () => {
   };
 
   const handleLogout = () => {
-    navigate("/login");
+    navigate(pathKeys.login());
     handleClose();
   };
 

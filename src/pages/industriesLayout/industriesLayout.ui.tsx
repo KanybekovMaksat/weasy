@@ -13,7 +13,7 @@ export function IndustriesLayout() {
 
 export function IntroIndusrtiesLayout() {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen flex items-center ">
       <Outlet />
     </div>
   );

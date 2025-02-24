@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import { Button, Card, Typography } from "@mui/material";
-import { Edit2 } from "lucide-react";
-import { Specialist } from "~entities/staff";
+import React from "react";
+import { Card, Typography } from "@mui/material";
 import { StaffListProps } from "~widgets/staff-list";
 
 export const FormerList: React.FC<StaffListProps> = ({ specialists }) => {
-  const [selectedSpecialist, setSelectedSpecialist] =
-    useState<Specialist | null>(null);
-
   return (
     <div className="pl-6 bg-white rounded-lg">
       <div className="space-y-4">

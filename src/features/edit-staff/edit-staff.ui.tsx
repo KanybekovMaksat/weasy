@@ -7,8 +7,7 @@ import {
   DialogTitle,
   TextField,
 } from "@mui/material";
-import { Specialist } from "~entities/staff";
-import EditIcon from "@mui/icons-material/Edit";
+
 
 export const EditStaff = ({ specialist, onSave, onCancel }) => {
   const [name, setName] = useState(specialist.name);

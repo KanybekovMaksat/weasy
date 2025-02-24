@@ -4,6 +4,6 @@ import { SpecialistPage } from "./specialistPage.ui";
 import { pathKeys } from "../../shared/lib/react-router";
 
 export const SpecialistPageRoute: RouteObject = {
-  path: pathKeys.specialist(),
+  path: pathKeys.specialists(),
   element: createElement(SpecialistPage),
 };

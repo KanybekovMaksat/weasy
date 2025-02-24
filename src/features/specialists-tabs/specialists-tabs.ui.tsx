@@ -6,6 +6,7 @@ import { StaffList } from "~widgets/staff-list";
 import { Specialist } from "~entities/staff";
 import { StaffInfo } from "~widgets/staff-info";
 import { FormerList } from "~widgets/former-list";
+import { DoctorSchedule } from "~widgets/schedule-list";
 const tabs = [
   { key: "current", label: "Специалисты" },
   { key: "former", label: "Бывшие специалисты" },
@@ -42,8 +43,8 @@ export const SpecialistsTabs: React.FC<SpecialistsTabsProps> = ({
         {activeTab === "current" && (
           <StaffList specialists={specialists} onEdit={onEdit} />
         )}
-        {activeTab === "former" && <FormerList specialists={specialists} />}
-        {activeTab === "schedule" && <div>График работы</div>}
+        {activeTab === "former" && <FormerList onEdit={onEdit} specialists={specialists} />}
+        {activeTab === "schedule" && <DoctorSchedule />}
       </div>
     </div>
   );

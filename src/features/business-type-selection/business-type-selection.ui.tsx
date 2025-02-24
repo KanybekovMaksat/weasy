@@ -5,12 +5,13 @@ import { CategoryCard } from "~widgets/category-card";
 import { businessCategories } from "~entities/business-category";
 import { useNavigate } from "react-router-dom";
 import { Reveal } from "~shared/lib/framer";
+import { pathKeys } from "~shared/lib/react-router";
 export const BusinessTypeSelection = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const navigate = useNavigate();
 
   const handleSelect = (id: number) => setSelectedId(id);
-  const handleNext = () => navigate("/next-step");
+  const handleNext = () => navigate(pathKeys.specialists());
 
   return (
     <>
@@ -43,6 +44,7 @@ export const BusinessTypeSelection = () => {
             onClick={handleNext}
             disabled={!selectedId}
             className="py-[15px] px-[68px] normal-case bg-btnback font-semibold text-base "
+            
           >
             Далее
           </Button>

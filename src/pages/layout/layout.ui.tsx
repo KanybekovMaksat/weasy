@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "~widgets/sidebar";

@@ -1,5 +1,4 @@
 import avatar from "~shared/assets/staffImg/doctorAva.png";
-import { useState } from "react";
 
 export type Specialist = {
   id: number;
