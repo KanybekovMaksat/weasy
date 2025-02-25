@@ -77,7 +77,7 @@ export const LoginForm = () => {
                 <TextField
                   {...field}
                   fullWidth
-                  type="password "
+                  type="password"
                   label="Пароль *"
                   error={!!errors.password}
                   helperText={errors.password?.message}
