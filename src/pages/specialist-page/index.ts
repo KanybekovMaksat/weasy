@@ -1,0 +1,1 @@
+export {SpecialistPageRoute} from './specialistPage.route';
