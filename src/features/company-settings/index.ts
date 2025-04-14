@@ -1,2 +1,1 @@
-export { CompanySettingsForm } from "./company-settings-form.ui";
-
+export { CompanyGeneralSettings } from "./CompanyGeneralSettings.ui";

@@ -44,7 +44,7 @@ export const RegistrationForm = () => {
 
   const onSubmit = (data: FormData) => {
     console.log(data);
-    navigate(pathKeys.settings());
+    navigate(pathKeys.company());
   };
   return (
     <div className=" mx-auto  text-btnback">
@@ -285,7 +285,7 @@ export const RegistrationForm = () => {
                 !watch("firstName") ||
                 !watch("agreeTerms")
               }
-              onClick={() => navigate(pathKeys.settings())}
+              onClick={() => navigate(pathKeys.company())}
             >
               Зарегистрироваться
             </Button>

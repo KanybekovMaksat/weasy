@@ -7,8 +7,9 @@ import Setting from "~shared/assets/SideBarIcon/Setting.png";
 import User from "~shared/assets/SideBarIcon/User.png";
 import Specialist from "~shared/assets/SideBarIcon/specialist.png";
 import { pathKeys } from "~shared/lib/react-router";
+import logo from "~shared/assets/logo/logo.svg";
 
-export const Sidebar = () => {
+export const Sidebar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -35,12 +36,6 @@ export const Sidebar = () => {
 
   const configItems = [
     {
-      id: "profile",
-      text: "Личный кабинет",
-      icon: User,
-      path: pathKeys.profile,
-    },
-    {
       id: "settings",
       text: "Настройки",
       icon: Setting,
@@ -49,76 +44,78 @@ export const Sidebar = () => {
   ];
 
   return (
-    <div className="">
-      <div className="w-[220px] bg-white h-[472px] pt-5 border-r border-[#EBEBEB]">
+    <div>
+      <div className="w-[220px] bg-white h-[472px] pt-5 ">
         <div className="flex items-center gap-2 pl-[10px]">
-          <div className="w-[60px] h-[60px] bg-black"></div>
+          <img src={logo} alt="" />
           <Typography className="font-semibold text-2xl text-black">
             Weasy
           </Typography>
         </div>
-        <Typography className="font-medium text-[13px] text-[#44505C] py-4 pl-[10px] font-[Inter]">
-          Меню
-        </Typography>
-        <div>
-          {menuItems.map((item) => (
-            <ListItem key={item.id} disablePadding>
-              <ListItemButton
-                selected={location.pathname === item.path}
-                onClick={() => navigate(item.path)}
-                sx={{
-                  height: "56px",
-                  "&.Mui-selected": {
-                    backgroundColor: "#EBEBEB",
-                  },
-                }}
-              >
-                <div className="flex items-center gap-[12px] h-[56px] ">
-                  <img src={item.icon} alt="" />
-                  <Typography
-                    sx={{
-                      color:
-                        location.pathname === item.path ? "#303030" : "#666",
-                    }}
-                  >
-                    {item.text}
-                  </Typography>
-                </div>
-              </ListItemButton>
-            </ListItem>
-          ))}
+        <div className="border-r border-[#EBEBEB]">
+          <Typography className="font-medium text-[13px] text-[#44505C] py-4 pl-[10px] font-[Inter]">
+            Меню
+          </Typography>
+          <div>
+            {menuItems.map((item) => (
+              <ListItem key={item.id} disablePadding>
+                <ListItemButton
+                  selected={location.pathname === item.path}
+                  onClick={() => navigate(item.path)}
+                  sx={{
+                    height: "56px",
+                    "&.Mui-selected": {
+                      backgroundColor: "#EBEBEB",
+                    },
+                  }}
+                >
+                  <div className="flex items-center gap-[12px] h-[56px] ">
+                    <img src={item.icon} alt="" />
+                    <Typography
+                      sx={{
+                        color:
+                          location.pathname === item.path ? "#303030" : "#666",
+                      }}
+                    >
+                      {item.text}
+                    </Typography>
+                  </div>
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </div>
+          <Typography className="font-medium text-[13px] text-[#44505C] py-4 pl-[10px] font-[Inter]">
+            Конфигурация
+          </Typography>
+          <List>
+            {configItems.map((item) => (
+              <ListItem key={item.id} disablePadding>
+                <ListItemButton
+                  selected={location.pathname === item.path}
+                  onClick={() => navigate(item.path)}
+                  sx={{
+                    height: "56px",
+                    "&.Mui-selected": {
+                      backgroundColor: "#EBEBEB",
+                    },
+                  }}
+                >
+                  <div className="flex items-center gap-[12px] h-[56px]">
+                    <img src={item.icon} alt="" />
+                    <Typography
+                      sx={{
+                        color:
+                          location.pathname === item.path ? "#303030" : "#666",
+                      }}
+                    >
+                      {item.text}
+                    </Typography>
+                  </div>
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
         </div>
-        <Typography className="font-medium text-[13px] text-[#44505C] py-4 pl-[10px] font-[Inter]">
-          Конфигурация
-        </Typography>
-        <List>
-          {configItems.map((item) => (
-            <ListItem key={item.id} disablePadding>
-              <ListItemButton
-                selected={location.pathname === item.path}
-                onClick={() => navigate(item.path)}
-                sx={{
-                  height: "56px",
-                  "&.Mui-selected": {
-                    backgroundColor: "#EBEBEB",
-                  },
-                }}
-              >
-                <div className="flex items-center gap-[12px] h-[56px]">
-                  <img src={item.icon} alt="" />
-                  <Typography
-                    sx={{
-                      color:
-                        location.pathname === item.path ? "#303030" : "#666",
-                    }}
-                  >
-                    {item.text}
-                  </Typography>
-                </div>
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
       </div>
     </div>
   );

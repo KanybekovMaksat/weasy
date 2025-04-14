@@ -16,7 +16,8 @@ import { IndustriesDetailsPageRoute } from "~pages/industriesDetailPage";
 import { SpecialistPageRoute } from "~pages/specialistHome";
 import { RegistrationPageRoute } from "~pages/registration-page";
 import { LoginPageRoute } from "~pages/login-page";
-import { SettingsPageRoute } from "~pages/company-settings-page";
+import { CompanyPageRoute } from "~pages/company-settings-page";
+import { SettingsPageRoute } from "~pages/settings-page";
 import { ClientsPageRoute } from "~pages/clients-home";
 import { CalendarPageRoute } from "~pages/calendar-page";
 function BubbleError() {
@@ -51,13 +52,18 @@ const router = createBrowserRouter([
     path: "/",
     element: <GenericLayout />,
     errorElement: <BubbleError />,
-    children: [SpecialistPageRoute, ClientsPageRoute, CalendarPageRoute],
+    children: [
+      SpecialistPageRoute,
+      ClientsPageRoute,
+      CalendarPageRoute,
+      SettingsPageRoute,
+    ],
   },
   {
     path: "/",
     element: <IntroIndusrtiesLayout />,
     errorElement: <BubbleError />,
-    children: [RegistrationPageRoute, LoginPageRoute, SettingsPageRoute],
+    children: [RegistrationPageRoute, LoginPageRoute, CompanyPageRoute],
   },
 ]);
 

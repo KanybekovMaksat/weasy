@@ -1,13 +1,14 @@
 import { Typography } from "@mui/material";
 import mabook from "~shared/assets/auth/MacBook Pro 16.png";
 import { RegistrationForm } from "~features/auth/registration-form";
+import logo from '~shared/assets/logo/logo.svg'
 
 export const RegistrationSection = () => {
   return (
     <div className="min-h-screen flex overflow-hidden w-[99vw] ">
       <div className="bg-[#4C6980] flex-1 flex flex-col items-center justify-center pt-[50px] ">
         <div className="flex flex-col items-center pb-10">
-          <div className="w-[110px] h-[110px] bg-black"></div>
+          <img src={logo} alt="" />
           <Typography
             variant="h4"
             className="font-bold text-[34px] text-white pt-[15px]"

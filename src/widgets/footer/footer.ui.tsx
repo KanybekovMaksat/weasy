@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import { pathKeys } from "~shared/lib/react-router";
+import logo from "~shared/assets/logo/logo.svg";
 
 export function Footer() {
   return (
@@ -13,12 +14,11 @@ export function Footer() {
         <div className="mx-auto flex flex-col lg:flex-row gap-x-[120px] items-center ">
           <Link to="/" className="flex items-center mb-6 lg:mb-0">
             <div className="gap-2 flex items-center">
-              <Box className="w-[60px] h-[60px] bg-black"></Box>
+              <img src={logo} alt="" />
               <Typography className="font-semibold text-2xl text-black">
                 Weasy
               </Typography>
             </div>
-
           </Link>
 
           <div className=" items-center gap-6 flex max-sm:grid ">

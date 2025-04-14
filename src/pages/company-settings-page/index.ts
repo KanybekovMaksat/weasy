@@ -1,1 +1,1 @@
-export { SettingsPageRoute } from './company-settings-page';
+export { CompanyPageRoute } from './company-settings-page';

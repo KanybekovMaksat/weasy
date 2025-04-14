@@ -7,6 +7,7 @@ import { Specialist } from "~entities/staff";
 import { StaffInfo } from "~widgets/staff-info";
 import { FormerList } from "~widgets/former-list";
 import { DoctorSchedule } from "~widgets/schedule-list";
+import { HeaderUser } from "~widgets/header-user";
 const tabs = [
   { key: "current", label: "Специалисты" },
   { key: "former", label: "Бывшие специалисты" },
@@ -30,21 +31,26 @@ export const SpecialistsTabs: React.FC<SpecialistsTabsProps> = ({
 
   return (
     <div className="flex flex-col">
-      <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+      <HeaderUser />
+      <div className="border-t border-l  border-[#EBEBEB]">
+        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
 
-      <StaffInfo
-        activeTab={activeTab}
-        specialists={specialists}
-        onAdd={onAdd}
-        onEditSchedule={onEditSchedule}
-      />
+        <StaffInfo
+          activeTab={activeTab}
+          specialists={specialists}
+          onAdd={onAdd}
+          onEditSchedule={onEditSchedule}
+        />
 
-      <div className="flex-grow">
-        {activeTab === "current" && (
-          <StaffList specialists={specialists} onEdit={onEdit} />
-        )}
-        {activeTab === "former" && <FormerList onEdit={onEdit} specialists={specialists} />}
-        {activeTab === "schedule" && <DoctorSchedule />}
+        <div className="flex-grow">
+          {activeTab === "current" && (
+            <StaffList specialists={specialists} onEdit={onEdit} />
+          )}
+          {activeTab === "former" && (
+            <FormerList onEdit={onEdit} specialists={specialists} />
+          )}
+          {activeTab === "schedule" && <DoctorSchedule />}
+        </div>
       </div>
     </div>
   );

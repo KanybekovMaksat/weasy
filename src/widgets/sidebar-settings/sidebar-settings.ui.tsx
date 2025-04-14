@@ -50,6 +50,7 @@ export const SidebarSettings: React.FC<SidebarSettingsProps> = ({
       >
         Настройки
       </Typography>
+
       <Reveal from="top" delay={0.3}>
         <List className="border-[#EBEBEB] border-r text-[#44505c]">
           <ListItem button onClick={() => setOpenCatalog(!openCatalog)}>
@@ -57,7 +58,7 @@ export const SidebarSettings: React.FC<SidebarSettingsProps> = ({
             {openCatalog ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse in={openCatalog} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
+            <List component="p" disablePadding>
               {renderMenuItem("locations", "Локации", 2)}
               {renderMenuItem("services", "Услуги", 2)}
             </List>

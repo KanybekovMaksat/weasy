@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import mabook from "~shared/assets/auth/MacBook Pro 16.png";
-import { CompanySettingsForm } from "~features/company-settings";
+import { CompanyInformationForm } from "~features/company-information";
 export const CompanySettings = () => {
   return (
     <div className="min-h-screen flex overflow-hidden w-[99vw] pt-[130px] ">
@@ -22,7 +22,7 @@ export const CompanySettings = () => {
       </div>
 
       <div className="flex-1 flex items-center justify-center pt-[150px] pb-[50px] bg-[#F5F5F5]">
-        <CompanySettingsForm />
+        <CompanyInformationForm />
       </div>
     </div>
   );

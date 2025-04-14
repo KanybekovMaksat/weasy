@@ -3,6 +3,7 @@ import { IndustriesCard } from "~entities/IndustriesCard";
 import { industries } from "~entities/IndustriesCard";
 import { Typography, Box } from "@mui/material";
 import { Reveal } from "~shared/lib/framer";
+import logo from '~shared/assets/logo/logo.svg'
 
 export const IndustrySection: React.FC = () => {
   return (

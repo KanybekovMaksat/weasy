@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { pathKeys } from "~shared/lib/react-router";
 import { useNavigate } from "react-router-dom";
+import logo from '~shared/assets/logo/logo.svg'
 
 export const HomeHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,7 @@ export const HomeHeader: React.FC = () => {
       <div className="container">
         <Toolbar className="flex justify-between pt-[20px] pb-[20px] pl-[0]">
           <Link to={pathKeys.home()} className="flex items-center gap-2">
-            <Box className="w-[60px] h-[60px] bg-black"></Box>
+            <img src={logo} alt="" />
 
             <Typography className="font-semibold text-2xl text-black">
               Weasy

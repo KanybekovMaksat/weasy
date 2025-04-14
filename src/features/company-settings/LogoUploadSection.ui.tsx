@@ -1,16 +1,30 @@
-import { useState } from "react";
-import { Button, Typography, IconButton, Box } from "@mui/material";
+import { useState, useEffect } from "react";
+import { Button, Typography, IconButton } from "@mui/material";
 import { CloudUpload, Delete } from "@mui/icons-material";
 
 export const LogoUploadSection = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
+  useEffect(() => {
+    const savedLogo = localStorage.getItem('companyLogo');
+    if (savedLogo) {
+      setPreviewUrl(savedLogo);
+    }
+  }, []);
+
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file && file.type.startsWith("image/")) {
       setSelectedFile(file);
-      setPreviewUrl(URL.createObjectURL(file));
+      
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        setPreviewUrl(base64String);
+        localStorage.setItem('companyLogo', base64String);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -19,6 +33,7 @@ export const LogoUploadSection = () => {
     if (previewUrl) {
       URL.revokeObjectURL(previewUrl);
       setPreviewUrl(null);
+      localStorage.removeItem('companyLogo');
     }
   };
 
@@ -59,11 +74,11 @@ export const LogoUploadSection = () => {
             <img
               src={previewUrl}
               alt="Логотип компании"
-              className="w-24 h-24 object-cover rounded-lg "
+              className="w-24 h-24 object-cover rounded-full "
             />
             <IconButton
               onClick={handleDelete}
-              className=" bg-white text-red rounded-[4px] py-[13px] px-[14.5px] hover:bg-red-50"
+              className=" bg-white text-red rounded-[4px] py-[13px] px-[14.5px] "
               size="small"
             >
               <Delete className="text-red-500" fontSize="small" />

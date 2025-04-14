@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { Reveal } from "~shared/lib/framer";
-export const ReviewWidget: React.FC = () => {
+export const eviewWidget: React.FC = () => {
   return (
     <Box className="mb-[90px]">
       <div style={{ margin: "0 auto" }} className="container">

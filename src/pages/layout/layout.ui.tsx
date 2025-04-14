@@ -12,7 +12,6 @@ export function GenericLayout() {
         <Sidebar />
 
         <div className="flex-1 flex flex-col  ">
-          <HeaderUser />
           <main className="flex-1  ">
             <div className="border-t border-[#ebebeb]">
               <Outlet />

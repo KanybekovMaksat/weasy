@@ -15,6 +15,9 @@ export const pathKeys = {
   settings() {
     return pathKeys.root.concat("settings/");
   },
+  company() {
+    return pathKeys.root.concat("company/");
+  },
   login() {
     return pathKeys.root.concat("auth/");
   },
@@ -66,14 +69,6 @@ export const pathKeys = {
     },
     bySlug(slug: string) {
       return pathKeys.course.root().concat(`${slug}/`);
-    },
-  },
-  profile: {
-    root() {
-      return pathKeys.root.concat("profile/");
-    },
-    badges() {
-      return pathKeys.profile.root().concat("badges/");
     },
   },
 };

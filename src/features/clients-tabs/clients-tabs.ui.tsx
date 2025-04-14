@@ -4,11 +4,10 @@ import { TabKey } from "~entities/tabs";
 import { ClientsList } from "~widgets/clients-list";
 import { Client } from "~entities/clients";
 import { ClientsInfo } from "~widgets/clients-info";
-import { FormerList } from "~widgets/former-list";
-
+import { HeaderUser } from "~widgets/header-user";
 const tabs = [
-  { key: "current", label: "Клиенты" },
-  { key: "new", label: "Новые клиенты" },
+  { key: "current", label: "Все" },
+  { key: "new", label: "Новые" },
   { key: "without", label: "Без записи" },
 ] as const;
 
@@ -27,20 +26,23 @@ export const ClientsTabs: React.FC<ClientsTabsProps> = ({
 
   return (
     <div className="flex flex-col">
-      <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+      <HeaderUser />
+      <div className="border-t border-l border-[#EBEBEB]">
+        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
 
-      <ClientsInfo activeTab={activeTab} clients={clients} onAdd={onAdd} />
+        <ClientsInfo activeTab={activeTab} clients={clients} onAdd={onAdd} />
 
-      <div className="flex-grow">
-        {activeTab === "current" && (
-          <ClientsList clients={clients} onEdit={onEdit} />
-        )}
-        {activeTab === "new" && (
-          <ClientsList clients={clients} onEdit={onEdit} />
-        )}
-        {activeTab === "without" && (
-          <ClientsList clients={clients} onEdit={onEdit} />
-        )}
+        <div className="flex-grow">
+          {activeTab === "current" && (
+            <ClientsList clients={clients} onEdit={onEdit} />
+          )}
+          {activeTab === "new" && (
+            <ClientsList clients={clients} onEdit={onEdit} />
+          )}
+          {activeTab === "without" && (
+            <ClientsList clients={clients} onEdit={onEdit} />
+          )}
+        </div>
       </div>
     </div>
   );
